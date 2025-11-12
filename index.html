@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tharun V N | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Tharun V N</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="toggle-theme">🌙</button>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Hello, I'm <span class="highlight">Tharun</span></h2>
+    <h3 id="typing"></h3>
+    <p>Full Stack Developer | MERN Enthusiast</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I'm Tharun, a passionate developer learning and building projects using the MERN stack. I love creating beautiful and functional web applications that make life easier.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>To-Do App</h3>
+      <p>A simple React-based app to manage tasks efficiently.</p>
+    </div>
+    <div class="project-card">
+      <h3>Chat App</h3>
+      <p>Real-time messaging app built using MERN and Socket.io.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Tharun V N. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
