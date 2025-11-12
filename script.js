@@ -1,4 +1,10 @@
 // Typing Effect
+import cors from "cors";
+app.use(cors({
+  origin: "https://portfolio-frontend-gamma-nine.vercel.app", // your Vercel domain
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}))
 const text = "Full Stack Developer | MERN Enthusiast";
 let i = 0;
 function typeEffect() {
@@ -19,11 +25,6 @@ document.getElementById("toggle-theme").addEventListener("click", () => {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Contact Form Message
-document.getElementById("contact-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Message sent successfully! 🚀");
-});
-
 document.getElementById("contact-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -31,7 +32,7 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
   const email = e.target[1].value;
   const message = e.target[2].value;
 
- const res = await fetch("https://tharun-portfolio-backend.onrender.com", 
+ const res = await fetch("https://tharun-portfolio-backend.onrender.com/api/message", 
 {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -41,9 +42,10 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
   const data = await res.json();
 
   if (data.success) {
-    alert("✅ Message sent and stored successfully!");
-    e.target.reset();
-  } else {
-    alert("❌ Failed to send message. Try again.");
-  }
+      alert("✅ Message sent and stored successfully!");
+      e.target.reset();
+    } else {
+      alert("❌ Failed to send message. Try again.");
+    }
+  
 });
